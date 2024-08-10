@@ -1,0 +1,144 @@
+import greenfoot.*;
+
+public class TortugaAzul extends Tortuga {
+
+    public void cuadrado() {
+        repetir(4, lado -> {
+                    adelante(50);
+                    izquierda(90);
+            } ) ;
+    }
+
+    public void aspa() {
+        adelante(100);
+        izquierda(135);
+
+        adelante(71);
+        izquierda(90);
+
+        adelante(71);
+        izquierda(45);
+    }
+
+    public void molino() {
+        repetir(4, lado -> {
+                    aspa();
+            } ) ;
+    }
+
+    public void pentagono() {
+        repetir(5, lado -> {
+                    adelante(50);
+                    izquierda(72);
+            });
+
+    }
+
+    public void hexagono() {
+        repetir (6, lado -> {
+                    adelante (100);
+                    izquierda(60);
+
+            } ) ;
+    }
+
+    public void poligono(int lados) {
+        repetir(lados, lado -> { 
+                    adelante(100);
+                    izquierda(360 / lados);
+
+            } ) ;
+
+    }
+
+    public void todo() {
+        triangulo(); 
+        cuadradodos();
+        pentagono();
+        hexagono();
+
+    }
+
+    public void cuadradodos() {
+        repetir(4, lado -> {
+                    adelante(100);
+                    izquierda(90);
+
+            } ) ;
+    }
+
+    public void triangulo(){
+        repetir(3, lado -> {
+                    adelante(100);
+                    izquierda(120);
+
+            } ) ;
+    }
+
+    public void flor() {
+        repetir(12, pentagono -> {
+                    figura(5);
+                    izquierda(360 / 12);
+            } ) ;
+    }
+
+    public void figura(int lados) {
+        repetir(lados, lado -> {
+                    adelante(100);
+                    izquierda(360 / lados);
+
+            } ) ;
+    }
+
+    public void figurados() {
+
+        figura(3);
+        figura(4);
+        figura(5);
+        figura(6);
+    } 
+
+    public void flordos() {
+        repetir(14, pentagono -> {
+                    figura(5);
+                    izquierda(360 / 14);
+            } ) ;
+    }
+
+    public void florpoligonal(int ladosPétalo, int cantidadPétalos) {
+        repetir(cantidadPétalos, figura -> {
+                    figura(ladosPétalo);
+                    izquierda(360 / cantidadPétalos);
+            } ) ;
+    }
+
+    public void florpoligonalDos(int ladosPétalo, int cantidadPétalos, int tamañoPétalo) {
+        repetir(cantidadPétalos, figura -> {
+                    figuraTamañoLados(ladosPétalo, tamañoPétalo);
+                    izquierda(360 / cantidadPétalos);
+            } ) ;
+    }
+    public void figuraTamañoLados(int lados, int tamaño) {
+        repetir(lados, lado -> {
+                    adelante(tamaño);
+                    izquierda(360 / lados);
+
+            } ) ;
+    }
+    void arcoiris() {
+        izquierda(90);
+        repetir(17, segmento -> {
+            derecha(10);
+            adelante(20);
+            cambiarColor();
+        });
+    }
+    public void florpoligonalColorTamañoVariables(int ladosPétalo, int cantidadPétalos, int tamañoPétalo) {
+        repetir(cantidadPétalos, figura -> {
+                    figuraTamañoLados(ladosPétalo, tamañoPétalo);
+                    izquierda(360 / cantidadPétalos);
+                    cambiarColor();
+            } ) ;
+    }
+
+}
